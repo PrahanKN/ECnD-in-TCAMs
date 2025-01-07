@@ -38,9 +38,9 @@ module tcam_line_array #(
         begin
             parity_check = 3'b000;
             // Parity bit positions and checks (Hamming (7,4) code)
-            parity_check[0] = data[1] ^ data[2] ^ data[4] ^ data[6]; // Check parity P1
-            parity_check[1] = data[0] ^ data[2] ^ data[5] ^ data[6]; // Check parity P2
-            parity_check[2] = data[0] ^ data[1] ^ data[3] ^ data[6]; // Check parity P3
+            parity_check[0] = data[0] ^ data[2] ^ data[4] ^ data[6]; // Check parity P1
+            parity_check[1] = data[1] ^ data[2] ^ data[5] ^ data[6]; // Check parity P2
+            parity_check[2] = data[3] ^ data[4] ^ data[5] ^ data[6]; // Check parity P3
             detect_parity = parity_check;
         end
     endfunction
